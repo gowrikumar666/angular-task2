@@ -1,0 +1,51 @@
+<p>Add superhero names
+    <br>
+<input type="text" #box (keyup.enter) = "addsuperheros(box.value); box.value=''" placeholder="addsuperheros">
+</p>
+
+<p>
+    <input type="checkbox" id = "can-fly" [(ngModel)]= "canFly">
+</p>
+
+<p>
+    <input type="checkbox" id="item" [(ngModel)]="item">
+</p>
+
+<button (click) = "reset()">reset</button>
+
+<div id="flyers" class="center">
+    <table>
+        <tr>
+            <th width="50%">Name</th>
+            <th width="50%">canfly</th>
+        </tr>
+        <tr *ngFor= "let hero of heros">
+            <td>{{hero.Name}}</td>
+            <td>{{hero.CanFly}}</td>
+        </tr>
+
+    </table>
+</div>
+
+<h2>heros with pure pipe</h2>
+
+<div id="flyers" class="center">
+        <table>
+            <tr>
+                <th width="50%">Name</th>
+                <th width="50%">canfly</th>
+            </tr>
+            <tr *ngFor= "let hero of (heros| superheropure)">
+                <td>{{hero.Name}}</td>
+                <td>{{hero.CanFly}}</td>
+            </tr>
+    
+        </table>
+    </div>
+
+
+
+
+
+
+

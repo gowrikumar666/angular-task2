@@ -1,0 +1,39 @@
+<body>
+<div class="container demo1">
+    Notification bar
+</div>
+<div class ="container demo">
+
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+<form>
+<span class="glyphicon glyphicon-search demo6"></span>
+<input  type="text" class="form-control demo2" #myval (keyup.enter)="values=myval.value"  (input)="search()"  name="search" > 
+</form>
+</div>
+</div>
+<strong class="demo8">You May Also Search For:</strong>
+<br>
+<strong class="demo9">{{values}}</strong>
+
+    
+<div class="container">
+    <div class="row">
+<div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 " *ngFor = "let img of visibleImages">
+        <img src="{{img.url}}"  width="155" height="110">
+</div>
+</div>
+</div>
+</body>
+
+<!--  <div class="container demo1">
+    <input type="text" class="form-control" placeholder="search" name="search">
+    <div class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+        </button>
+    </div>
+</div> -->
+
